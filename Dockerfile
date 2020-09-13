@@ -15,7 +15,7 @@ EXPOSE 8000
 
 # Copy the files to here
 COPY . /usr/src/app
-CMD ["gunicorn","-b", "127.0.0.1:8000","application:app"]
+CMD ["gunicorn","-b", "0.0.0.0:8000","application:app"]
 
 
 
