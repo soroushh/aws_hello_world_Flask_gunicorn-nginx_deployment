@@ -11,9 +11,11 @@ RUN pip install -r /usr/src/app/requirements.txt
 # Set the working directory
 WORKDIR /usr/src/app
 
+EXPOSE 8000
+
 # Copy the files to here
 COPY . /usr/src/app
-CMD ["python3", "/usr/src/app/application/__init__.py"]
+CMD ["gunicorn","-b", "127.0.0.1:8000","application:app"]
 
 
 
